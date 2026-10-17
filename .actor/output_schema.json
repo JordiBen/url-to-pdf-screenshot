@@ -1,0 +1,18 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "URL to PDF & screenshot output",
+  "properties": {
+    "results": {
+      "type": "string",
+      "template": "{{links.apiDefaultDatasetUrl}}/items",
+      "title": "Rendered files",
+      "description": "One item per URL/HTML document with links to its screenshot and/or PDF."
+    },
+    "files": {
+      "type": "string",
+      "title": "Screenshots & PDFs",
+      "description": "All generated screenshot and PDF files.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys"
+    }
+  }
+}
