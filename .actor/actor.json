@@ -1,0 +1,62 @@
+{
+  "actorSpecification": 1,
+  "name": "url-to-pdf-screenshot",
+  "title": "URL & HTML to PDF and Full-Page Screenshot",
+  "description": "Render web pages or your own HTML with headless Chrome into PDFs (A4/Letter, margins, landscape) and full-page or viewport screenshots on desktop, tablet or mobile. Hides cookie banners. Files stored with shareable links.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "readme": "../README.md",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "Files",
+          "transformation": {
+            "fields": [
+              "url",
+              "htmlName",
+              "status",
+              "title",
+              "screenshotUrl",
+              "pdfUrl",
+              "error"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "url": {
+                "label": "URL",
+                "format": "link"
+              },
+              "htmlName": {
+                "label": "HTML doc"
+              },
+              "status": {
+                "label": "HTTP",
+                "format": "number"
+              },
+              "title": {
+                "label": "Title"
+              },
+              "screenshotUrl": {
+                "label": "Screenshot",
+                "format": "image"
+              },
+              "pdfUrl": {
+                "label": "PDF",
+                "format": "link"
+              },
+              "error": {
+                "label": "Error"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

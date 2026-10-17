@@ -1,0 +1,168 @@
+{
+  "title": "URL & HTML to PDF and Screenshot input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "URLs",
+      "type": "array",
+      "editor": "stringList",
+      "description": "Pages to render, one per line.",
+      "prefill": [
+        "https://apify.com"
+      ]
+    },
+    "htmlDocuments": {
+      "title": "Raw HTML documents",
+      "type": "array",
+      "editor": "json",
+      "description": "Optional: render your own HTML (invoices, reports, emails). Array of {\"name\": \"invoice-42\", \"html\": \"<h1>...</h1>\"} objects or plain strings.",
+      "default": []
+    },
+    "outputs": {
+      "title": "Outputs",
+      "type": "array",
+      "editor": "select",
+      "items": {
+        "type": "string",
+        "enum": [
+          "screenshot",
+          "pdf"
+        ],
+        "enumTitles": [
+          "Screenshot",
+          "PDF"
+        ]
+      },
+      "default": [
+        "screenshot"
+      ],
+      "description": "Each output is charged separately."
+    },
+    "device": {
+      "title": "Device / viewport",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        "desktop",
+        "laptop",
+        "tablet",
+        "mobile"
+      ],
+      "enumTitles": [
+        "Desktop 1440x900",
+        "Laptop 1280x800",
+        "Tablet 820x1180 @2x",
+        "Mobile 390x844 @3x"
+      ],
+      "default": "desktop",
+      "description": "Viewport to render with: desktop (1366x768 or similar) or a mobile phone emulation."
+    },
+    "fullPage": {
+      "title": "Full-page screenshot",
+      "type": "boolean",
+      "default": true,
+      "description": "Capture the entire scrollable page instead of just the viewport."
+    },
+    "screenshotFormat": {
+      "title": "Screenshot format",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        "png",
+        "jpeg",
+        "webp"
+      ],
+      "default": "png",
+      "sectionCaption": "Screenshot options",
+      "description": "Image format of the screenshot."
+    },
+    "quality": {
+      "title": "JPEG/WebP quality",
+      "type": "integer",
+      "default": 85,
+      "minimum": 10,
+      "maximum": 100,
+      "description": "Compression quality for JPEG and WebP screenshots (ignored for PNG)."
+    },
+    "pdfFormat": {
+      "title": "PDF paper size",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        "A4",
+        "Letter",
+        "Legal",
+        "A3",
+        "A5",
+        "Tabloid"
+      ],
+      "default": "A4",
+      "sectionCaption": "PDF options",
+      "description": "Paper size used when generating PDFs."
+    },
+    "landscape": {
+      "title": "Landscape",
+      "type": "boolean",
+      "default": false,
+      "description": "Generate PDFs in landscape orientation."
+    },
+    "printBackground": {
+      "title": "Print backgrounds",
+      "type": "boolean",
+      "default": true,
+      "description": "Include background colors and images in PDFs."
+    },
+    "pdfMargin": {
+      "title": "Margin (all sides)",
+      "type": "string",
+      "editor": "textfield",
+      "default": "10mm",
+      "description": "CSS length, e.g. 0, 10mm, 0.5in."
+    },
+    "waitUntil": {
+      "title": "Wait until",
+      "type": "string",
+      "editor": "select",
+      "enum": [
+        "networkidle2",
+        "networkidle0",
+        "load",
+        "domcontentloaded"
+      ],
+      "default": "networkidle2",
+      "sectionCaption": "Advanced",
+      "description": "Which browser event to wait for before capturing the page."
+    },
+    "delayMs": {
+      "title": "Extra delay before capture (ms)",
+      "type": "integer",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 30000,
+      "description": "For animations or lazy-loaded content."
+    },
+    "hideCookieBanners": {
+      "title": "Hide common cookie banners",
+      "type": "boolean",
+      "default": true,
+      "description": "Try to hide common cookie consent banners and overlays before capturing."
+    },
+    "maxConcurrency": {
+      "title": "Parallel pages",
+      "type": "integer",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 10,
+      "description": "Maximum number of pages rendered in parallel."
+    },
+    "timeoutSecs": {
+      "title": "Page timeout (seconds)",
+      "type": "integer",
+      "default": 45,
+      "minimum": 10,
+      "maximum": 180,
+      "description": "Maximum time to wait for each page to load."
+    }
+  }
+}

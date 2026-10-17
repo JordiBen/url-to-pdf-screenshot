@@ -1,0 +1,11 @@
+{
+  "name": "url-to-pdf-screenshot",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Render URLs or raw HTML to PDF and/or screenshots (PNG/JPEG/WebP) with headless Chrome.",
+  "main": "src/main.js",
+  "scripts": { "start": "node src/main.js", "test": "node --test --test-concurrency=1 test/" },
+  "engines": { "node": ">=20" },
+  "dependencies": { "apify": "^3.4.0", "puppeteer-core": "^24.0.0" }
+}
