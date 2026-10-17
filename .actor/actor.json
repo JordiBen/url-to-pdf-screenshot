@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "url-to-pdf-screenshot",
-  "title": "URL & HTML to PDF and Full-Page Screenshot",
-  "description": "Render web pages or your own HTML with headless Chrome into PDFs (A4/Letter, margins, landscape) and full-page or viewport screenshots on desktop, tablet or mobile. Hides cookie banners. Files stored with shareable links.",
+  "title": "Website Screenshot & URL to PDF: Full Page, HTML to PDF",
+  "description": "Take full-page website screenshots (PNG, JPEG, WebP) and convert URLs or your own HTML to PDF in headless Chrome: desktop, tablet or mobile, A4/Letter, cookie banners hidden. Files stored with shareable links. $2 per 1,000 screenshots.",
   "version": "1.0",
   "buildTag": "latest",
   "input": "./input_schema.json",
